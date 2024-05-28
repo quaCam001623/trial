@@ -464,12 +464,13 @@ public class DBContext {
         PreparedStatement statement = connection.prepareStatement(sql);
         statement.setString(1, productID);
         ResultSet rs = statement.executeQuery();
-        
+
+        int totalProduct = 0;
         while(rs.next()){
             int number = rs.getInt(1);
-            return number;
+            totalProduct = number;
         }
-        return 0;
+        return totalProduct;
     }
     
     
